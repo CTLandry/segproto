@@ -13,6 +13,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\RestServices\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\RestServices\ShoppingListService\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\_BaseViewModel.cs" />
@@ -27,6 +29,10 @@
       <DependentUpon>ShoppingListOrganizerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ShoppingListOrganizerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\_BaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ShoppingList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RestServices\ShoppingListService\IShoppingListService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RestServices\ShoppingListService\ShoppingListService.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">

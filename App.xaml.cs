@@ -11,8 +11,8 @@ namespace seg.core
         public App()
         {
             InitializeComponent();
-            var shoppingView = new ShoppingListOrganizerView();
-            MainPage = shoppingView;
+
+            MainPage = new NavigationPage(new ShoppingListOrganizerView());
         }
 
         protected override void OnStart()

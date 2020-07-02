@@ -2,8 +2,34 @@
 <ContentPage
     x:Class="seg.core.Views.ShoppingListOrganizerView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <ContentPage.Content>
-        <Label Text="Hello Shared Project Shopping List" />
-    </ContentPage.Content>
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Shopping List"
+    BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            AutomationId="toolBarSettings"
+            Command=""
+            Icon=""
+            Order="Primary"
+            Priority="1"
+            Text="Edit" />
+        <ToolbarItem />
+    </ContentPage.ToolbarItems>
+    <CollectionView
+        x:Name="shoppingListCollection"
+        Margin="10,0,10,0"
+        ItemsSource=""
+        ItemsUpdatingScrollMode="KeepScrollOffset"
+        SelectedItem=""
+        SelectionChangedCommand=""
+        SelectionMode="Single"
+        VerticalScrollBarVisibility="Never">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="16" />
+        </CollectionView.ItemsLayout>
+    </CollectionView>
+
+
 </ContentPage>
