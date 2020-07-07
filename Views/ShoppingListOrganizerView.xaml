@@ -12,7 +12,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="Default">
-                <templates:ShoppingListDefaultRowViewCell />
+                <templates:ShoppingListOrganizerDefaultView />
             </DataTemplate>
             <templates:ShoppingListDataTemplateSelector x:Key="DataTempSelector" Default="{d:StaticResource Default}" />
 
@@ -26,16 +26,31 @@
             Text="Edit" />
         <ToolbarItem />
     </ContentPage.ToolbarItems>
-    <CollectionView
-        x:Name="shoppingListCollection"
-        Margin="10,0,10,0"
-        ItemTemplate="{StaticResource DataTempSelector}"
-        ItemsSource="{Binding ShoppingLists}"
-        ItemsUpdatingScrollMode="KeepScrollOffset"
-        SelectionMode="Single"
-        VerticalScrollBarVisibility="Never">
-        <CollectionView.ItemsLayout>
-            <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="16" />
-        </CollectionView.ItemsLayout>
-    </CollectionView>
+    <Grid Margin="20,0,20,30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <CollectionView
+            x:Name="shoppingListCollection"
+            Grid.Row="0"
+            Margin="20"
+            ItemTemplate="{StaticResource DataTempSelector}"
+            ItemsSource="{Binding ShoppingLists}"
+            ItemsUpdatingScrollMode="KeepScrollOffset"
+            SelectionMode="Single"
+            VerticalScrollBarVisibility="Never">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" />
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+        <Button
+            Grid.Row="1"
+            BackgroundColor="Red"
+            FontAttributes="Bold"
+            FontSize="Medium"
+            Text="Add new list"
+            TextColor="White" />
+    </Grid>
+
 </ContentPage>

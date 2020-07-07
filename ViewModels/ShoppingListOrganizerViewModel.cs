@@ -10,15 +10,8 @@ namespace seg.core.ViewModels
 {
     public class ShoppingListOrganizerViewModel : _BaseViewModel
     {
-       
-        private IShoppingListService shoppingListService;
 
-        private bool shoppingListLoaded = false;
-        public bool ShoppingListLoaded
-        {
-            set { SetProperty(ref shoppingListLoaded, value); }
-            get { return shoppingListLoaded; }
-        }
+        private IShoppingListService shoppingListService;
 
         private IEnumerable<ShoppingList> shoppingLists = null;
         public IEnumerable<ShoppingList> ShoppingLists
@@ -35,10 +28,7 @@ namespace seg.core.ViewModels
 
         public async Task LoadShoppingList()
         {
-           
-                ShoppingLists = await shoppingListService.GetShoppingLists();
-                shoppingListLoaded = true;
-          
+            ShoppingLists = await shoppingListService.GetShoppingLists();
         }
     }
 }

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="seg.core.Views.DataTemplates.ShoppingListOrganizer.ShoppingListOrganizerDefaultView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <Label
+        Grid.Column="0"
+        LineBreakMode="TailTruncation"
+        Text="{Binding .Name}"
+        TextColor="Black" />
+    <Label
+        Grid.Column="1"
+        Text="&gt;"
+        TextColor="Black" />
+</Grid>
