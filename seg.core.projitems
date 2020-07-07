@@ -15,6 +15,8 @@
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\RestServices\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\RestServices\ShoppingListService\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\DataTemplates\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\DataTemplates\ShoppingListOrganizer\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\_BaseViewModel.cs" />
@@ -33,6 +35,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ShoppingList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\RestServices\ShoppingListService\IShoppingListService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\RestServices\ShoppingListService\ShoppingListService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DataTemplates\ShoppingListOrganizer\ShoppingListDataTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DataTemplates\ShoppingListOrganizer\ShoppingListDefaultRowView.xaml.cs">
+      <DependentUpon>ShoppingListDefaultRowView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -44,6 +50,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ShoppingListOrganizerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DataTemplates\ShoppingListOrganizer\ShoppingListDefaultRowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

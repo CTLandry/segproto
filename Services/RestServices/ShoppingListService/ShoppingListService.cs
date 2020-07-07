@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using System.Threading.Tasks;
 using seg.core.Models;
+using seg.core.Services.RestServices.ShoppingListService;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(ShoppingListService))]
 namespace seg.core.Services.RestServices.ShoppingListService
 {
     public class ShoppingListService : IShoppingListService
@@ -16,9 +20,23 @@ namespace seg.core.Services.RestServices.ShoppingListService
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ShoppingList>> GetShoppingLists()
+        public async Task<IEnumerable<ShoppingList>> GetShoppingLists()
         {
-            throw new NotImplementedException();
+            //Temporary
+            //Should call API for collection
+            return await Task.Run(() =>
+            {
+                //temporary for effect
+                var ShoppingLists = new List<ShoppingList>();
+                var shoppingList1 = new ShoppingList("Shopping List 1");
+                var shoppingList2 = new ShoppingList("Shopping List 2");
+
+                ShoppingLists.Add(shoppingList1);
+                ShoppingLists.Add(shoppingList2);
+
+                return ShoppingLists;
+            });
+            
         }
     }
 }
